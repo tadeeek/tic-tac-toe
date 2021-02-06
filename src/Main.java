@@ -7,22 +7,28 @@ public class Main {
         char[][] arr = new char[3][3];
         Scanner scanner = new Scanner(System.in);
         char currentGamerChar = 'X';
-        int currentGamer = 1; // if even - gamer O
+        int currentGamer = 1; // If even - player O
 
         // Initialize Board
         initializeBoard(arr);
+        System.out.println("Tic tac toe game but board coordinates starts from bottom left corner (crazy)");
 
         while (true) {
             displayBoard(arr);
-            System.out.print("Enter the coordinates: ");
+            if (currentGamer % 2 == 0) {
+                System.out.print("Player O: Enter the coordinates: ");
+            } else {
+                System.out.print("Player X: Enter the coordinates: ");
+            }
 
             try {
                 String coordinates;
                 coordinates = scanner.nextLine();
                 int coordX = Integer.parseInt(coordinates.substring(0, 1));
                 int coordY = Integer.parseInt(coordinates.substring(2, 3));
+                // Checking if coordinates are in board range
                 if (coordX >= 1 && coordX <= 3 && coordY >= 1 && coordY <= 3) {
-                    // Do insertion
+                    // Checking if position is not ocupied
                     if (isFree(arr, coordX, coordY)) {
                         // Current gamer switch
                         if (currentGamer % 2 == 0) {
@@ -62,8 +68,10 @@ public class Main {
             } else if (isDraw(arr)) {
                 displayBoard(arr);
                 System.out.println("Draw");
+                break;
             }
         }
+        scanner.close();
     }
 
     public static boolean isFree(char[][] arr, int x, int y) {
