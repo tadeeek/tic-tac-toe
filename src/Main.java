@@ -11,8 +11,8 @@ public class Main {
 
         // Initialize Board
         initializeBoard(arr);
-        System.out.println("Tic tac toe game but board coordinates starts from bottom left corner (crazy)");
-
+        System.out.println("= Tic tac toe game but board coordinates starts from bottom left corner (crazy)");
+        System.out.println("= Type coordinates as: 'x,y'");
         while (true) {
             displayBoard(arr);
             if (currentGamer % 2 == 0) {
@@ -59,11 +59,11 @@ public class Main {
 
             if (ifWins(arr, 'X')) {
                 displayBoard(arr);
-                System.out.printf("X wins");
+                System.out.printf("X wins!!!");
                 break;
             } else if (ifWins(arr, 'O')) {
                 displayBoard(arr);
-                System.out.println("O wins");
+                System.out.println("O wins!!!");
                 break;
             } else if (isDraw(arr)) {
                 displayBoard(arr);
@@ -101,21 +101,6 @@ public class Main {
         if (arr[y][x] == ' ') {
             arr[y][x] = gamer;
         }
-    }
-
-    private static boolean isImpossible(char[][] arr) {
-        if (((checkRows(arr, 'X') || checkCols(arr, 'X') || checkCross(arr, 'X'))
-                && (checkRows(arr, 'O') || checkCols(arr, 'O') || checkCross(arr, 'O'))) || hasMore(arr)) {
-            return true;
-        }
-        return false;
-    }
-
-    private static boolean isNotFinished(char[][] arr) {
-        if (!ifWins(arr, 'X') && !ifWins(arr, 'O') && isEmpty(arr)) {
-            return true;
-        }
-        return false;
     }
 
     private static boolean isDraw(char[][] arr) {
@@ -205,7 +190,6 @@ public class Main {
     }
 
     private static void initializeBoard(char[][] arr) {
-        int k = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 arr[i][j] = ' ';
