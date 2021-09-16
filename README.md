@@ -6,7 +6,6 @@ The main purpose of writing this program was to practice planning and developing
 
 ## Table of contents
 
-- [General info](#general-info)
 - [Screencast](#screencast)
 - [Technologies](#technologies)
 - [Status](#status)
@@ -15,10 +14,6 @@ The main purpose of writing this program was to practice planning and developing
 ## Screencast
 
 ![Tic tac toe screeencast](screencast-tic-tac-toe.gif)
-
-## General info
-
-Simple tic tac toe game but board coordinates starts from bottom left corner
 
 ## Technologies
 
